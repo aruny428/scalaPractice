@@ -105,6 +105,25 @@ implicit val instedOfReq="sdasd"
   //rev
   rev(2)
   rev("sample")
+
+  //////////////////////////////
+
+if(true && true){
+  println("experiment")
+}
+
+  val lstt : Array[Int]= Array(1,2,3,4,5)
+
+  val result = for(i <- lstt) yield {
+     con(i)
+  }
+  
+
+  def con(i:Int) = i*2
+
+  result.foreach(println)
+
+
 }
 
 object kuch{
