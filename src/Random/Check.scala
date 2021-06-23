@@ -9,7 +9,7 @@ class device{
 }
 object Check extends App {
 
-  /////////
+ /* /////////
 
   val sample = 1 to 10
   def isEven :PartialFunction[Int, String] = {
@@ -121,7 +121,57 @@ if(true && true){
 
   def con(i:Int) = i*2
 
-  result.foreach(println)
+  result.foreach(println)*/
+
+
+  /////////// checking flatmap with Options
+
+def ensuringToken(f: => Int)(implicit request : String)=
+  {
+    val requestToken = Option("sampleString")
+
+    val date = Option("23/04/2021")
+
+    date.flatMap { d =>
+      println(d)
+      val exceptionHash = "sampleString"
+      requestToken.filter(exceptionHash.equals).map(_ => f)
+    }.getOrElse(404)
+  }
+
+
+  def funtest={
+    22
+  }
+
+  def fun={
+    implicit val request="done"
+    ensuringToken{
+      funtest
+    }
+  }
+
+  //println(fun)
+
+  ////////////////////////////////////////////////////
+
+  case class car(price : Int, Model : String)
+
+  def bmw(price :Int,model: String )={
+    car(price,model)
+  }
+
+  bmw(4, "B6") match {
+    case car(price,_) => price match {
+      case 4 => println("Done")
+      case _ => println("not Done")
+    }
+  }
+
+  val demo = Seq(true,false,true,true)
+  println(demo.headOption.get)
+
+  //////////////////////////////////////////////////////////
 
 
 }
