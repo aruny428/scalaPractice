@@ -3,6 +3,7 @@ package Random
 import scala.{:+, ::}
 import scala.collection.mutable
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import java.util.UUID
 
 class device{
   def gg(i:Int)=2*i
@@ -172,6 +173,10 @@ def ensuringToken(f: => Int)(implicit request : String)=
   println(demo.headOption.get)
 
   //////////////////////////////////////////////////////////
+
+  val customerId = UUID.randomUUID()
+
+  println(customerId)
 
 
 }
