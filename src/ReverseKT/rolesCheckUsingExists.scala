@@ -47,7 +47,7 @@ object rolesCheckUsingExists extends App {
   }
 
 
-  /*def withTimeout(f: => Future[String]): String = {
+ /* def withTimeout(f: => Future[String]): String = {
       try {
         Await.result(f, 5.seconds)
       } catch {
